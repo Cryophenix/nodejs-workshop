@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app>
       <v-btn text color="primary" to="/create">Create</v-btn>
-      <v-btn text color="secondary" to="/read">Read</v-btn>
+      <v-btn text color="secondary" to="/">Read</v-btn>
       <v-btn text color="warning" to="/update">Update</v-btn>
       <v-btn text color="error" to="/delete">Delete</v-btn>
 

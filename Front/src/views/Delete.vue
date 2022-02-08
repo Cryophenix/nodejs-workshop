@@ -85,13 +85,13 @@ export default {
           let id = this.pokemons[i].id;
           try {
             let ret = await axios.delete(
-              "http://localhost:5000/pokemons/" + id
+              this.$api_url + "/pokemons/" + id
             );
             if (ret.statusText == "OK")
               this.launchSuccess("Deleted Successfully");
             this.pokemons.splice(i, 1);
           } catch (err) {
-            this.launchError("Server didn't respond !");
+            this.launchError("Server didn't respond to DELETE " + this.$api_url + " /pokemons/id");
           }
           break;
         }
@@ -114,7 +114,7 @@ export default {
         this.pokemons = query.data;
       }
     } catch (err) {
-      this.launchError("Server didn't respond !");
+      this.launchError("Server didn't respond to GET" + this.$api_url + "/pokemons/");
     }
   },
 };

@@ -98,7 +98,7 @@ export default {
 
   async created() {
     try {
-      let query = await axios.get("http://localhost:5000/pokemons/");
+      let query = await axios.get(this.$api_url + "/pokemons/");
       console.log(query.data)
       if (!(query.data instanceof Array) || !(query.data.every((e) => e instanceof Object))) this.launchError("Un-processable data");
       else if (!query.data) this.launchError("No data received");
@@ -107,7 +107,7 @@ export default {
         this.pokemons = query.data;
       }
     } catch (err) {
-      this.launchError("Server didn't respond !");
+      this.launchError("Server didn't respond to GET " + this.$api_url + "/pokemons/");
     }
   },
 };

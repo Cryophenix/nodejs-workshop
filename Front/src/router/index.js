@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Create from '../views/Create.vue'
 import Read from '../views/Read.vue'
 import Update from '../views/Update.vue'
@@ -10,17 +9,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
     path: '/create',
     name: 'create',
     component: Create
   },
   {
-    path: '/read',
+    path: '/',
     name: 'read',
     component: Read
   },

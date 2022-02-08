@@ -4,6 +4,7 @@ import vuetify from './plugins/vuetify'
 import router from './router'
 
 Vue.config.productionTip = false
+Vue.prototype.$api_url = "localhost:5000"
 
 new Vue({
   vuetify,

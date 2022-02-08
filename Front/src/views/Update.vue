@@ -150,7 +150,7 @@ export default {
               this.pokemons[i]
             );
           } catch (err) {
-            this.launchError("Server didn't respond !");
+            this.launchError("Server didn't respond to PUT " + this.$api_url + "/pokemons/id");
           }
           this.pokemons[i].id = id;
           break;
@@ -161,7 +161,7 @@ export default {
 
   async created() {
     try {
-      let query = await axios.get("http://localhost:5000/pokemons/");
+      let query = await axios.get(this.$api_url + "/pokemons/");
       console.log(query.data);
       if (
         !(query.data instanceof Array) ||
@@ -174,7 +174,7 @@ export default {
         this.pokemons = query.data;
       }
     } catch (err) {
-      this.launchError("Server didn't respond !");
+      this.launchError("Server didn't respond to GET " + this.$api_url + "/pokemons/");
     }
   },
 };

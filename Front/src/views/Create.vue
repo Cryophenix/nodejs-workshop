@@ -154,7 +154,7 @@ export default {
 
     async send() {
       try {
-        let resp = await axios.post("http://localhost:5000/pokemons/", {
+        let resp = await axios.post(this.$api_url + "/pokemons/", {
           name: this.name,
           HP: this.hp,
           Atk: this.atk,
@@ -171,7 +171,7 @@ export default {
         else
           this.launchSuccess("Seems Ok !");
       } catch (err) { 
-        this.launchError("Server didn't respond !");
+        this.launchError("Server didn't respond to POST " + this.$api_url + "/pokemons/");
       }
     },
   },
